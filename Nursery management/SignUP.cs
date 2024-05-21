@@ -63,7 +63,7 @@ namespace Nursery_management
                         if (v != 1)
                         {
                             connection.Open();
-                            SqlCommand insertCommand = new SqlCommand("insert into Registration values(@first_name, @last_name, @date, @gender, @email, @address, @password)", connection);
+                            SqlCommand insertCommand = new SqlCommand("insert into RegistrationTbl values(@first_name, @last_name, @date, @gender, @email, @address, @password)", connection);
                             insertCommand.Parameters.AddWithValue("@first_name", first_name.Text);
                             insertCommand.Parameters.AddWithValue("@last_name", last_name.Text);
                             insertCommand.Parameters.AddWithValue("@date", date.Text);
@@ -73,7 +73,7 @@ namespace Nursery_management
                             insertCommand.Parameters.AddWithValue("@password", password.Text);
 
                             insertCommand.ExecuteNonQuery();
-                            string query = "select * from Registration where email = @email";
+                            string query = "select * from RegistrationTbl where email = @email";
                             SqlCommand selectCommand = new SqlCommand(query, connection);
                             selectCommand.Parameters.AddWithValue("@email", email.Text);
                             connection.Close();
@@ -111,8 +111,8 @@ namespace Nursery_management
         int check(string email)
         {
             connection.Open();
-            string query = "select * from Registration where email = '" + email + "'";
-            SqlCommand command = new SqlCommand("insert into Registration values(@first_name, @last_name, @date, @gender, @email, @address, @password)", connection);
+            string query = "select * from RegistrationTbl where email = '" + email + "'";
+            SqlCommand command = new SqlCommand("insert into RegistrationTbl values(@first_name, @last_name, @date, @gender, @email, @address, @password)", connection);
             int v = (int)command.ExecuteScalar();
             connection.Close();
             return v;

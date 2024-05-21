@@ -44,7 +44,7 @@ namespace Nursery_management
         {
             if(u_name.Text != "" && password.Text != "")
             {
-                string query = "SELECT * FROM Registration WHERE email = '" + u_name.Text + "' AND password = '" + password.Text + "'";
+                string query = "SELECT * FROM RegistrationTbl WHERE email = '" + u_name.Text + "' AND password = '" + password.Text + "'";
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
                 int v = (int) command.ExecuteScalar();
