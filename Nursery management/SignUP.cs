@@ -55,26 +55,27 @@ namespace Nursery_management
             try
             {
                 if (first_name.Text != "" && last_name.Text != "" && date.Text != "" && gender.Text != "" && email.Text != "" &&
-                    address.Text != "" && password.Text != "" && con_password.Text != "") {
+                    address.Text != "" && password.Text != "" && con_password.Text != "")
+                {
                     if (password.Text == con_password.Text)
                     {
                         int v = check(email.Text);
                         if (v != 1)
                         {
                             connection.Open();
-                            SqlCommand command = new SqlCommand("insert into Registration values(@first_name, @last_name, @date, @gender, @email, @address, @password)", connection);
-                            command.Parameters.AddWithValue("@first_name", first_name.Text);
-                            command.Parameters.AddWithValue("@last_name", last_name.Text);
-                            command.Parameters.AddWithValue("@date", date.Text);
-                            command.Parameters.AddWithValue("@gender", gender.Text);
-                            command.Parameters.AddWithValue("@email", email.Text);
-                            command.Parameters.AddWithValue("@address", address.Text);
-                            command.Parameters.AddWithValue("@password", password.Text);
+                            SqlCommand insertCommand = new SqlCommand("insert into Registration values(@first_name, @last_name, @date, @gender, @email, @address, @password)", connection);
+                            insertCommand.Parameters.AddWithValue("@first_name", first_name.Text);
+                            insertCommand.Parameters.AddWithValue("@last_name", last_name.Text);
+                            insertCommand.Parameters.AddWithValue("@date", date.Text);
+                            insertCommand.Parameters.AddWithValue("@gender", gender.Text);
+                            insertCommand.Parameters.AddWithValue("@email", email.Text);
+                            insertCommand.Parameters.AddWithValue("@address", address.Text);
+                            insertCommand.Parameters.AddWithValue("@password", password.Text);
 
-                            command.ExecuteNonQuery();
+                            insertCommand.ExecuteNonQuery();
                             string query = "select * from Registration where email = @email";
-                            SqlCommand command = new SqlCommand(query, connection);
-                            command.Parameters.AddWithValue("@email", email);
+                            SqlCommand selectCommand = new SqlCommand(query, connection);
+                            selectCommand.Parameters.AddWithValue("@email", email.Text);
                             connection.Close();
                             MessageBox.Show("Registration Successful");
                             first_name.Text = "";
@@ -111,7 +112,7 @@ namespace Nursery_management
         {
             connection.Open();
             string query = "select * from Registration where email = '" + email + "'";
-            SqlCommand command = new SqlCommand(query, connection); 
+            SqlCommand command = new SqlCommand("insert into Registration values(@first_name, @last_name, @date, @gender, @email, @address, @password)", connection);
             int v = (int)command.ExecuteScalar();
             connection.Close();
             return v;
