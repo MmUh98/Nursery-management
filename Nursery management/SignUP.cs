@@ -63,10 +63,10 @@ namespace Nursery_management
                         if (v != 1)
                         {
                             connection.Open();
-                            SqlCommand insertCommand = new SqlCommand("insert into RegistrationTbl values(@first_name, @last_name, @date, @gender, @email, @address, @password)", connection);
-                            insertCommand.Parameters.AddWithValue("@first_name", first_name.Text);
-                            insertCommand.Parameters.AddWithValue("@last_name", last_name.Text);
-                            insertCommand.Parameters.AddWithValue("@date", date.Text);
+                            SqlCommand insertCommand = new SqlCommand("insert into RegistrationTbl values(@f_name, @l_name, @b_date, @gender, @email, @address, @password)", connection);
+                            insertCommand.Parameters.AddWithValue("@f_name", first_name.Text);
+                            insertCommand.Parameters.AddWithValue("@l_name", last_name.Text);
+                            insertCommand.Parameters.AddWithValue("@b_date", date.Text);
                             insertCommand.Parameters.AddWithValue("@gender", gender.Text);
                             insertCommand.Parameters.AddWithValue("@email", email.Text);
                             insertCommand.Parameters.AddWithValue("@address", address.Text);
@@ -111,8 +111,9 @@ namespace Nursery_management
         int check(string email)
         {
             connection.Open();
-            string query = "select * from RegistrationTbl where email = '" + email + "'";
-            SqlCommand command = new SqlCommand("insert into RegistrationTbl values(@first_name, @last_name, @date, @gender, @email, @address, @password)", connection);
+            string query = "select COUNT(*) from RegistrationTbl where email = @email";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@email", email);
             int v = (int)command.ExecuteScalar();
             connection.Close();
             return v;
