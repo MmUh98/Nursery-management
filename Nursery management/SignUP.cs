@@ -66,7 +66,7 @@ namespace Nursery_management
                             SqlCommand insertCommand = new SqlCommand("insert into RegistrationTbl (f_Name, l_Name, b_date, gender, email, address, password) values(@f_name, @l_name, @b_date, @gender, @email, @address, @password)", connection);
                             insertCommand.Parameters.AddWithValue("@f_name", first_name.Text);
                             insertCommand.Parameters.AddWithValue("@l_name", last_name.Text);
-                            insertCommand.Parameters.AddWithValue("@b_date", date.Text);
+                            insertCommand.Parameters.AddWithValue("@b_date", date.Value.ToString("yyyy-MM-dd"));
                             insertCommand.Parameters.AddWithValue("@gender", gender.Text);
                             insertCommand.Parameters.AddWithValue("@email", email.Text);
                             insertCommand.Parameters.AddWithValue("@address", address.Text);

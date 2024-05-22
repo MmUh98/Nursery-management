@@ -46,6 +46,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Districts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Districts.Designer.cs">
+      <DependentUpon>Districts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bajaur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bajaur.Designer.cs">
+      <DependentUpon>Bajaur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chitral Lower.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chitral Lower.Designer.cs">
+      <DependentUpon>Chitral Lower.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chitral Upper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chitral Upper.Designer.cs">
+      <DependentUpon>Chitral Upper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FNF Abbottabad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FNF Abbottabad.Designer.cs">
+      <DependentUpon>FNF Abbottabad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kurram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kurram.Designer.cs">
+      <DependentUpon>Kurram.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +108,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Chitral Lower.resx">
+      <DependentUpon>Chitral Lower.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chitral Upper.resx">
+      <DependentUpon>Chitral Upper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Districts.resx">
+      <DependentUpon>Districts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bajaur.resx">
+      <DependentUpon>Bajaur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FNF Abbottabad.resx">
+      <DependentUpon>FNF Abbottabad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kurram.resx">
+      <DependentUpon>Kurram.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -77,6 +140,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
@@ -96,6 +160,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agriiiiiiiiiii.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agriiiiii.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homepic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agriculture-Reform-Plan-1170x725.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Agriculture-Reform-Plan-1170x725.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Punjab-Land-Mutation.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\crops.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Punjab-Land-Mutation.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\istockphoto-506164764-612x612.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\kurram.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\kurram1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\FNF abbotbad.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\FNF Abbottabad.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
